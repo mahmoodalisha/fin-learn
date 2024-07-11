@@ -1,0 +1,25 @@
+.Quiz{
+    font-size: 22px;
+    font-weight: 600;
+    font-family: "Dosis", sans-serif;
+    padding: 30px;
+    margin-left: 50px;
+}
+.Quiz button{
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 17px;
+}
+.budget h1{
+    font-size: 70px;
+    font-weight: 700;
+    font-family: "Dosis", sans-serif;
+    margin-left: 280px;
+    margin-top: 45px;
+}
+.budget p{
+    font-size: 20px;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    padding: 30px;
+}
