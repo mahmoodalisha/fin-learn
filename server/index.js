@@ -5,21 +5,19 @@ const port = 4000;
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const cors = require('cors');
-require('dotenv').config();
-const plaid = require('plaid');
-const {PLAID_CLIENT_ID, PLAID_SECRET} = require('./key');
 
-const client = new plaid.Client({
-        clientID: PLAID_CLIENT_ID,
-        secret: PLAID_SECRET,
-        env: plaid.environments.sandbox
-});
+
+
 
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 
-mongoose.connect('mongodb://192.168.86.119:9090/users?authSource=admin', {user: "root", pass:"example", useNewUrlParser: true})
+mongoose.connect('mongodb+srv://fin-learn:1234@cluster1.wajblu2.mongodb.net/user', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  
 
 const db = mongoose.connection;
 let userSchema = mongoose.Schema({
@@ -133,3 +131,5 @@ app.listen(port, () =>{
     });
     });
 
+//Redux Thunk: Allows you to write action creators that return a function instead of an action object.
+// This function can then perform asynchronous operations, including API calls, and dispatch actions based on the results.
