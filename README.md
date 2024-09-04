@@ -6,14 +6,17 @@ Welcome to the Financial Literacy App! This application is designed to help user
 
 
 
-https://github.com/user-attachments/assets/14e97be1-7677-494d-90dc-c872a23b25f9
+
+
+
+https://github.com/user-attachments/assets/8fa977ed-2be0-491e-b3f0-8d3f6da2b6ed
 
 
 
 
 
 
-https://github.com/user-attachments/assets/72b63f26-087a-4549-825e-d0ffe4a6a36e
+
 
 
 
