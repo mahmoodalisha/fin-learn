@@ -10,9 +10,15 @@ app.use(cors({
   origin: 'http://localhost:3000', 
 }));
 
+app.use(express.static(path.resolve(__dirname, 'fin-learn', 'build')))
+
+app.get("/test",(req,res)=>{
+    res.send("Express app is running")
+})
+
 // Initialize Plaid client
 const configuration = new Configuration({
-  basePath: PlaidEnvironments.sandbox, 
+  basePath: PlaidEnvironments[process.env.PLAID_ENV], 
   baseOptions: {
     headers: {
       'PLAID-CLIENT-ID': process.env.PLAID_CLIENT_ID,
@@ -43,6 +49,17 @@ app.post('/api/create_link_token', async (req, res) => {
   }
 });
 
+//serving frontend routes first
+app.get('*', (req, res) => {
+  res.sendFile(
+      path.resolve(__dirname, 'frontend', 'build', 'index.html'),
+      function (err) {
+          if (err) {
+              res.status(500).send(err)
+          }
+      }
+  )
+});
 
 
 const PORT = process.env.PORT || 5001;
